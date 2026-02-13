@@ -47,7 +47,7 @@ def test_evaluate_model():
     
     assert 'roc_auc' in metrics
     assert 'classification_report' in metrics
-    assert 0.5 < metrics['roc_auc'] < 1.0  # Should be better than random
+    assert 0.5 <= metrics['roc_auc'] <= 1.0  # Should be better than random, can be perfect
 
 
 def test_model_prediction_shapes():

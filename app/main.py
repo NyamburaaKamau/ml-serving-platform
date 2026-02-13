@@ -46,7 +46,7 @@ FRAUD_PREDICTIONS = Counter(
 # Request/Response models
 class PredictionRequest(BaseModel):
     """Request schema for predictions"""
-    features: List[float] = Field(..., min_items=20, max_items=20)
+    features: List[float] = Field(..., min_length=20, max_length=20)
     request_id: str = Field(default=None)
     
     @field_validator('features')
