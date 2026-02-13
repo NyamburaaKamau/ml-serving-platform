@@ -353,23 +353,5 @@ MIT License - feel free to use for learning and portfolios
 
 ---
 
-## 💡 Why This Project Matters
-
-**For hiring managers:**
-This demonstrates I understand production systems, not just ML algorithms. I can:
-- Deploy models that actually work in production
-- Build infrastructure that scales and recovers from failures
-- Implement monitoring and observability
-- Write production-grade code with proper error handling
-- Think about cost, security, and reliability
-
-**What makes this different from bootcamp projects:**
-- Real production concerns: resource limits, health checks, security
-- Actual CI/CD pipeline, not just code
-- Performance testing and benchmarks
-- Cost analysis and optimization
-- Production-ready Docker images (multi-stage builds, non-root user)
-- Comprehensive documentation
-
 **Technologies used:**
 FastAPI · Docker · Kubernetes · Prometheus · GitHub Actions · Python · scikit-learn · Terraform (coming)
