@@ -49,13 +49,20 @@ jobs:
     name: Build and Push Docker Image
     needs: test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    # Disabled for now - enable when you have container registry set up
+    if: false # Change to: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: read
       packages: write
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -110,7 +117,8 @@ jobs:
     name: Deploy to Staging
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop'
+    # Disabled for now - enable when you have K8s cluster set up
+    if: false # Change to: github.ref == 'refs/heads/develop'
     environment:
       name: staging
       url: https://staging.example.com
@@ -132,7 +140,8 @@ jobs:
     name: Deploy to Production
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    # Disabled for now - enable when you have K8s cluster set up
+    if: false # Change to: github.ref == 'refs/heads/main'
     environment:
       name: production
       url: https://api.example.com
